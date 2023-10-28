@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AZoom Car Rental</title>
+</head>
+
+<body>
+  <div id="nav">
+    <nav class="nav container">
+      <h2>AZoom</h2>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="./rent.html" class="nav-link">Rent</a>
+        </li>
+        <li class="nav-item login_btn log_btn">Login</li>
+        <li class="nav-item logout_btn hidden log_btn">Logout</li>
+      </ul>
+    </nav>
+    <dialog class="modal" id="modal">
+      <h2>Login</h2>
+      <form class="login_form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" class="username" name="username" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="password" name="password" />
+      </form>
+      <button class="btn modal_close_btn">Login</button>
+    </dialog>
+  </div>
+
+  <section class="tab container">
+    <button class="btn_rent_tab">Rent</button>
+    <button class="btn_return_tab">Return</button>
+  </section>
+
+  <section class="container cars_section rent"></section>
+
+  <section class="container cars_section return"></section>
+
+  <dialog class="modal_rent" id="modal_rent">
+    <form class="rent_form">
+      <label for="location">Choose a location</label>
+      <select name="location" id="location">
+        <option value="1">Branch 1</option>
+        <option value="2">Branch 2</option>
+      </select>
+      <label for="card_number">Card number</label>
+      <input type="text" id="card_number" name="card_number" autocomplete="off" placeholder="1234 5678 9012 3456" />
+      <label for="name_on_card">Name on card</label>
+      <input type="name_on_card" id="name_on_card" name="name_on_card" placeholder="Ex. Daniel" />
+      <div class="flex_row">
+        <label for="expiry_date">Expiry date</label>
+        <input type="text" id="expiry_date" name="expiry_date" placeholder="01/19">
+        <label for="security_code">Security code</label>
+        <input type="password" id="security_code" name="security_code" placeholder="123">
+      </div>
+    </form>
+    <div class="flex_row">
+      <button class="btn btn_rent">Rent</button>
+      <button class="btn modal_close_btn_rent">Close</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal_return" id="modal_return">
+    <form class="return_form">
+      <label for="location">Choose a location</label>
+      <select name="location" id="location">
+        <option value="1">Car park 1</option>
+        <option value="2">Car park 2</option>
+      </select>
+    </form>
+    <button class="btn_inspect">
+      <span class="inspect">Inspect</span>
+      <svg class="loading hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+        style="fill: rgba(255, 255, 255, 1);">
+        <path
+          d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z">
+        </path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="check hidden"
+        style="fill: rgb(255, 255, 255);">
+        <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+      </svg>
+    </button>
+    <p class="bill"></p>
+    <button class="btn_pay hidden">
+      <span class="pay">Pay</span>
+      <svg class="pay_loading hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+        style="fill: rgba(255, 255, 255, 1);">
+        <path
+          d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z">
+        </path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="pay_check hidden"
+        style="fill: rgb(255, 255, 255);">
+        <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+      </svg>
+    </button>
+    <div class="flex_row">
+      <button class="btn btn_return_return">Return</button>
+      <button class="btn modal_close_btn_return">Close</button>
+    </div>
+  </dialog>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>
